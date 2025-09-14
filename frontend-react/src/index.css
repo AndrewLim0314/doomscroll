@@ -1,0 +1,255 @@
+/* index.css — global foundation + Inter font */
+
+/* Load Inter (400/500/600/700) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Theme tokens */
+:root {
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  /* Colors (light) */
+  --bg: #ffffff;
+  --text: #1f2937;         /* gray-800 */
+  --subtle: #6b7280;       /* gray-500 */
+  --card: #ffffff;
+  --border: #e5e7eb;       /* gray-200 */
+  --muted: #f3f4f6;        /* gray-100 */
+  --primary: #6366f1;      /* indigo-500 */
+  --primary-hover: #4f46e5;
+  --danger: #ef4444;       /* red-500 */
+  --success: #22c55e;      /* green-500 */
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.1);
+
+  color-scheme: light;
+}
+
+/* Prefer dark if user requests it */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;          /* deep navy */
+    --text: #e5e7eb;        /* gray-200 */
+    --subtle: #9ca3af;      /* gray-400 */
+    --card: #121934;        /* navy-800 */
+    --border: #1f2a44;      /* navy-700 */
+    --muted: #0f1530;       /* slightly lighter than bg */
+    --primary: #8b93ff;     /* softer indigo for dark */
+    --primary-hover: #a1a7ff;
+    --danger: #f87171;
+    --success: #34d399;
+
+    color-scheme: dark;
+  }
+}
+
+/* Base typography + page */
+:root {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h1 { font-size: clamp(1.8rem, 2.5vw, 2.25rem); }
+h2 { font-size: clamp(1.5rem, 2vw, 1.75rem); }
+h3 { font-size: clamp(1.25rem, 1.5vw, 1.375rem); }
+
+/* Paragraphs */
+p { margin: 0 0 0.75rem; }
+
+/* Buttons (base + variants) */
+button {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--muted);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .05s ease;
+}
+button:hover {
+  border-color: var(--primary);
+}
+button:active {
+  transform: translateY(1px);
+}
+button:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--primary), transparent 65%);
+  outline-offset: 2px;
+}
+
+/* Utility variants (add as className on button) */
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+}
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+}
+
+/* Inputs */
+input, textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.6em 0.75em;
+  font: inherit;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--subtle);
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary), transparent 75%);
+}
+
+/* Cards and layout helpers */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.stack-sm > * + * { margin-top: 8px; }
+.stack-md > * + * { margin-top: 12px; }
+.stack-lg > * + * { margin-top: 16px; }
+
+/* Media responsiveness */
+img, video, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+/* Muted text helper */
+.text-subtle {
+  color: var(--subtle);
+}
+
+/* Visually-hidden (for a11y) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Root centering from Vite template (optional) */
+#root {
+  display: block; /* let .container handle layout */
+  min-height: 100%;
+}
+
+:root {
+    --container-max: 760px;  /* match your .container max-width */
+    --subway-h: 220px;       /* fixed video height */
+    --subway-margin: 16px;   /* distance from bottom edge */
+}
+
+/* Fixed bar centered to container width */
+.video-fixed {
+    position: fixed;
+    left: 50%;
+    bottom: var(--subway-margin);
+    transform: translateX(-50%);
+    width: min(calc(100% - 32px), var(--container-max));
+    z-index: 50;
+}
+
+/* Spacer so the fixed video doesn't overlap the last post */
+.video-spacer {
+    height: calc(var(--subway-h) + (var(--subway-margin) * 2));
+}
+
+/* Video card visuals (reuse your .card look) */
+.subway-card {
+    margin: 0;
+}
+
+/* Fixed-height media area to match the spacer height */
+.subway-media-fixed {
+    position: relative;
+    height: var(--subway-h);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+/* The iframe itself */
+.subway-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Optional: shrink a bit on very small screens */
+@media (max-width: 420px) {
+    :root { --subway-h: 180px; }
+}

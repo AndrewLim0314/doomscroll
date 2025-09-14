@@ -1,0 +1,235 @@
+/* app.css — component styles for Doomscroll (cleaned + fixed video support) */
+
+/* Theme/Layout variables */
+:root {
+  --container-max: 760px;  /* match .container max-width */
+  --container-pad: 24px;   /* match .container padding */
+  --subway-h: 220px;       /* fixed video height */
+  --subway-margin: 16px;   /* distance from bottom edge */
+}
+
+/* Layout helpers */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--container-pad);
+}
+
+/* Cards */
+.card {
+  background: var(--card, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.1);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* Create Post */
+.post-form {
+  display: grid;
+  gap: 10px;
+}
+.post-form .row {
+  display: grid;
+  gap: 10px;
+}
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid var(--border, #e5e7eb);
+  background: var(--card, #fff);
+  color: var(--text, #1f2937);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+}
+.textarea {
+  min-height: 84px;
+  resize: vertical;
+}
+
+/* Post */
+.post {
+  display: block;
+}
+/* Post header (avatar + author + meta) */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.post-author {
+  font-weight: 700;
+}
+.post-meta {
+  color: #666;
+  font-size: 0.9em; /* 0.85–0.9em is good */
+}
+.post-content {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Media inside posts */
+.media {
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.media iframe,
+.media video,
+.media img {
+  width: 100%;
+  display: block;
+  max-height: 420px;
+  object-fit: cover;
+  background: #000;
+}
+
+/* Actions */
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border, #e5e7eb);
+  background: var(--muted, #f3f4f6);
+  color: var(--text, #1f2937);
+  transition: background-color .2s, border-color .2s, transform .05s;
+}
+.btn:hover {
+  border-color: var(--primary, #6366f1);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-like {
+  border: none;
+  background: #ff4757;
+  color: #fff;
+}
+.btn-like.liked {
+  background: #d6336c;
+}
+.btn-comment {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+/* Comments */
+.comments {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+.comment-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Utilities */
+.text-subtle {
+  color: #6b7280;
+}
+.center {
+  display: grid;
+  place-items: center;
+}
+
+/* Avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #22c55e);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+
+/* Skeleton loading */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--muted, #f3f4f6);
+  border-radius: 8px;
+  height: 12px;
+  margin: 10px 0;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 1.4s infinite;
+}
+.skeleton-title { height: 20px; width: 60%; margin-bottom: 16px; }
+.skeleton-text { height: 12px; width: 100%; }
+.skeleton-text.short { width: 70%; }
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+
+/* Fixed Subway Surfers video (always visible, matches post width) */
+:root {
+  --container-max: 760px;  /* match .container max-width */
+  --container-pad: 24px;   /* match .container padding */
+  --subway-h: 350px;       /* change this number to adjust height */
+  --subway-margin: 0px;    /* flush to bottom edge */
+}
+
+/* Fixed video aligned to container inner width */
+.video-fixed {
+  position: fixed;
+  left: 50%;
+  bottom: 0; /* stick to bottom */
+  transform: translateX(-50%);
+  width: min(
+    calc(100% - (var(--container-pad) * 2)),
+    calc(var(--container-max) - (var(--container-pad) * 2))
+  );
+  z-index: 50;
+}
+
+/* Spacer equals video height so content doesn't hide behind it */
+.video-spacer {
+  height: var(--subway-h);
+}
+
+/* Only top corners rounded; bottom is straight */
+.subway-media-fixed {
+  position: relative;
+  height: var(--subway-h);
+  border-radius: 12px 12px 0 0; /* rounded top corners only */
+  overflow: hidden;
+  background: #000;
+}
+
+.subway-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
