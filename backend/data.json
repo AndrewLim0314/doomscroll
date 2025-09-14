@@ -1,0 +1,209 @@
+{
+  "posts": [
+    {
+      "id": "7412194c-8488-4b1f-a763-9217336c836a",
+      "author": "Andrew",
+      "content": "Hello Change++!",
+      "createdAt": 1757618086132,
+      "likeCount": 1
+    },
+    {
+      "id": "c47539cc-bcfa-48f8-91bf-d4a4d76db4d2",
+      "author": "Andrew",
+      "content": "Hello Change++!",
+      "createdAt": 1757630476177,
+      "likeCount": 0
+    },
+    {
+      "id": "2280eb44-9d78-44c5-a52a-4fc0df44077b",
+      "author": "Andrew Lim",
+      "content": {
+        "text": "I am working on a project",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757702845368
+    },
+    {
+      "id": "abb0fcbe-7f0f-4172-956c-db40c7747c44",
+      "author": "cool stuff",
+      "content": {
+        "text": "nothing much",
+        "media": {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=_AbFXuGDRTs&pp=ugUEEgJlbtIHCQnJCQGHKiGM7w%3D%3D"
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757702861018
+    },
+    {
+      "id": "5732636b-7d96-49b3-b4f8-3b059dffc2c7",
+      "author": "ben dover",
+      "content": {
+        "text": "what's up?",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757702889565
+    },
+    {
+      "id": "64d96250-c3c1-4888-93c6-3c93f00e0c94",
+      "author": "diermeyer",
+      "content": {
+        "text": "doing homework",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757703127482
+    },
+    {
+      "id": "00e3f096-f8f0-4c04-8eab-d36ac04c291c",
+      "author": "hi",
+      "content": {
+        "text": "hi",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757703141648
+    },
+    {
+      "id": "9e879397-d2b2-4e0a-b7cf-c8e6e14fe284",
+      "author": "what",
+      "content": {
+        "text": "what",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 1,
+      "commentCount": 0,
+      "createdAt": 1757703406149
+    },
+    {
+      "id": "571bea1c-447c-4dc8-9ccb-d369078a996c",
+      "author": "Andrew",
+      "content": {
+        "text": "hello guys",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757703848371
+    },
+    {
+      "id": "bd56e4f8-b926-4d5d-90dc-90ce1f01adf5",
+      "author": "anrew",
+      "content": {
+        "text": "anrew",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757704019287
+    },
+    {
+      "id": "321b3671-ddd2-483f-bea8-d628d7aa43dd",
+      "author": "andrew",
+      "content": {
+        "text": "hello",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 1,
+      "commentCount": 0,
+      "createdAt": 1757704329373
+    },
+    {
+      "id": "ef20c6b4-33f2-4cbf-9ce9-8a3a85bf29e5",
+      "author": "sat",
+      "content": {
+        "text": "nothing",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 1,
+      "createdAt": 1757805783180
+    },
+    {
+      "id": "7ca89d23-0f69-41d3-a7d3-83840526b7ae",
+      "author": "anon",
+      "content": {
+        "text": "n",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 1,
+      "createdAt": 1757806895765
+    },
+    {
+      "id": "5f68b43a-b94d-4add-a9c3-f144048c85d5",
+      "author": "Anonymous",
+      "content": {
+        "text": "hi",
+        "media": {
+          "type": "none",
+          "url": ""
+        }
+      },
+      "likeCount": 0,
+      "commentCount": 0,
+      "createdAt": 1757806945330
+    }
+  ],
+  "comments": [
+    {
+      "id": "810e947c-33ae-47cb-8167-ac3c1342b9fa",
+      "postId": "8ae1c80b-f399-4280-bd3b-c715a99bd0c7",
+      "author": "adrew",
+      "content": "whats up",
+      "createdAt": 1757805717564
+    },
+    {
+      "id": "e88e469d-c183-4ae8-bdad-6693c6b07442",
+      "postId": "ef20c6b4-33f2-4cbf-9ce9-8a3a85bf29e5",
+      "author": "sat",
+      "content": "how's it going",
+      "createdAt": 1757805791930
+    },
+    {
+      "id": "bd426a07-5aa3-405e-9011-e8f11810aeb5",
+      "postId": "7ca89d23-0f69-41d3-a7d3-83840526b7ae",
+      "author": "anon",
+      "content": "h",
+      "createdAt": 1757806905949
+    }
+  ]
+}
